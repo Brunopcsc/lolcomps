@@ -21,7 +21,7 @@ public class LolComps {
 
         SaidaParser out = new SaidaParser();
         try {
-            ANTLRInputStream input = new ANTLRInputStream(new FileInputStream("D:\\grammarcamp.txt"));
+            ANTLRInputStream input = new ANTLRInputStream(new FileInputStream("/home/gury/erro1_linha1.txt"));
             compsLexer lexer = new compsLexer(input);
             CommonTokenStream tokens = new CommonTokenStream(lexer);
             compsParser parser = new compsParser(tokens);
