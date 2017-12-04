@@ -115,5 +115,5 @@ public class compsBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements 
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitBans(compsParser.BansContext ctx) { return visitChildren(ctx); }
+	@Override public T visitMais_lista(compsParser.Mais_listaContext ctx) { return visitChildren(ctx); }
 }

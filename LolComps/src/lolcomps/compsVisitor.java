@@ -95,9 +95,9 @@ public interface compsVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitLista(compsParser.ListaContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link compsParser#bans}.
+	 * Visit a parse tree produced by {@link compsParser#mais_lista}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitBans(compsParser.BansContext ctx);
+	T visitMais_lista(compsParser.Mais_listaContext ctx);
 }

@@ -184,13 +184,13 @@ public class compsBaseListener implements compsListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterBans(compsParser.BansContext ctx) { }
+	@Override public void enterMais_lista(compsParser.Mais_listaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitBans(compsParser.BansContext ctx) { }
+	@Override public void exitMais_lista(compsParser.Mais_listaContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

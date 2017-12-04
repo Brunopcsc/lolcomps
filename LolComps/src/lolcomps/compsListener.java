@@ -148,13 +148,13 @@ public interface compsListener extends ParseTreeListener {
 	 */
 	void exitLista(compsParser.ListaContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link compsParser#bans}.
+	 * Enter a parse tree produced by {@link compsParser#mais_lista}.
 	 * @param ctx the parse tree
 	 */
-	void enterBans(compsParser.BansContext ctx);
+	void enterMais_lista(compsParser.Mais_listaContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link compsParser#bans}.
+	 * Exit a parse tree produced by {@link compsParser#mais_lista}.
 	 * @param ctx the parse tree
 	 */
-	void exitBans(compsParser.BansContext ctx);
+	void exitMais_lista(compsParser.Mais_listaContext ctx);
 }

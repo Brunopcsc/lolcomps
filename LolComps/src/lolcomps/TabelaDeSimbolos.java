@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package lolcomps;
 
 import java.util.ArrayList;
@@ -10,21 +5,26 @@ import java.util.HashMap;
 import java.util.List;
 
 public class TabelaDeSimbolos {
+    public String escopo;
     
     private HashMap<String, EntradaTabelaDeSimbolos> tabelaDeSimbolos;
-    public TabelaDeSimbolos() {
+    public TabelaDeSimbolos(String escopo) {
+        this.escopo=escopo;
         tabelaDeSimbolos = new HashMap<>();
     }
-    public void inserir(String nome_escopo, String nome_caracteristica) {
+    public void inserir(String nome) {
         EntradaTabelaDeSimbolos etds = new EntradaTabelaDeSimbolos();
-        etds.nome = nome_caracteristica;
-	tabelaDeSimbolos.put(nome_escopo, etds);
+        etds.nome = nome;
+        tabelaDeSimbolos.put(nome, etds);
     }
-    public EntradaTabelaDeSimbolos verificar(String nome_escopo) {
-        if(tabelaDeSimbolos.containsKey(nome_escopo))
-		return tabelaDeSimbolos.get(nome_escopo);
-        else 
-		return null;
+    public EntradaTabelaDeSimbolos verificar(String nome) {
+        if(!tabelaDeSimbolos.containsKey(nome))
+            return null;
+        else return tabelaDeSimbolos.get(nome);
     }
     
+    public String nomeEscopo()
+    {
+        return this.escopo;
+    }
 }

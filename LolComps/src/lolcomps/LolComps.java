@@ -8,38 +8,34 @@ import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.misc.ParseCancellationException;
 
-/**
- *
- * @author Bruno
- */
 public class LolComps {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) throws FileNotFoundException, IOException {
 
         SaidaParser out = new SaidaParser();
-        try {
-            ANTLRInputStream input = new ANTLRInputStream(new FileInputStream("/home/gury/erro1_linha1.txt"));
-            compsLexer lexer = new compsLexer(input);
-            CommonTokenStream tokens = new CommonTokenStream(lexer);
-            compsParser parser = new compsParser(tokens);
-            ErrorListener erros = new ErrorListener(out);
-
-            //lexer.removeErrorListeners();
-            parser.removeErrorListeners();
-            parser.addErrorListener(erros);
-            parser.programa();
+        ANTLRInputStream input = new ANTLRInputStream(new FileInputStream("D:\\grammarcamp.txt"));
+        compsLexer lexer = new compsLexer(input);
+        CommonTokenStream tokens = new CommonTokenStream(lexer);
+        compsParser parser = new compsParser(tokens);
+        ErrorListener erros = new ErrorListener(out);
+        
+        parser.removeErrorListeners();
+        parser.addErrorListener(erros);
+        try{
+            compsParser.ProgramaContext arvore = parser.programa();
+            if (out.modificado) {
+                throw new ParseCancellationException();
+            }
+            Semantico sem = new Semantico(out);
+            sem.visitPrograma(arvore);
+            if(out.modificado)
+                throw new ParseCancellationException();
+            
         } catch (ParseCancellationException pce) {
             if (pce.getMessage() != null) {
                 out.println(pce.getMessage());
             }
         }
-        //FileWriter fw = new FileWriter(args[1]);
-        //fw.write(out + "Fim da compilacao\n");
-        //fw.flush();
-        //fw.close();
         System.out.println(out + "Fim da compilacao");
     }
 }
