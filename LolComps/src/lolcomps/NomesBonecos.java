@@ -65,7 +65,7 @@ public class NomesBonecos {
         lista.add("JAYCE");
         lista.add("JHIN");
         lista.add("JINX");
-        lista.add("KAlista");
+        lista.add("KALISTA");
         lista.add("KARMA");
         lista.add("KARTHUS");
         lista.add("KASSADIN");

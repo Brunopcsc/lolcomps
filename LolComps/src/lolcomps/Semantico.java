@@ -15,7 +15,7 @@ public class Semantico extends compsBaseVisitor<Object> {
     PilhaDeTabelas pilhaDeTabelas;
     TabelaDeSimbolos campeoes;
     // TabelaDeBonecos.valueOf("");
-    private NomesBonecos listaDeCampeoes;
+    public NomesBonecos listaDeCampeoes;
     
     public Semantico(SaidaParser out) {
         saida = out;
@@ -50,6 +50,8 @@ public class Semantico extends compsBaseVisitor<Object> {
     @Override
     public Object visitNome(compsParser.NomeContext ctx) {
         if (ctx.IDENT() != null) {
+            if(ctx.IDENT().getText().length()>18)
+                saida.println("Linha "+ ctx.IDENT().getSymbol().getLine()+ ": nome da comp não pode conter mais de 18 caracteres.");
             return ctx.IDENT().getText();
         }
         return null;
