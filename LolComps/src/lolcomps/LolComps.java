@@ -41,7 +41,7 @@ public class LolComps {
                 out.println(pce.getMessage());
             }
         }
-        if (!sint) {
+        if (!sint && out.modificado) {
             FileWriter saida;
             String result = args[0].substring(args[0].lastIndexOf("\\")+1,args[0].length());
             saida = new FileWriter(new File("ERROSINTATICO_"+result));
