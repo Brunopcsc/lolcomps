@@ -3,7 +3,9 @@ Linguagem geradora de composições para o jogo League of Legends. Essa linguage
 
 # Dependências
 Python 3.6
+
 Java
+
 Biblioteca OPENCV para Python
 
 # Instruções para execução
